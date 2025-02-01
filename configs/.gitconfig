@@ -1,0 +1,8 @@
+[user]
+	name = ${GITUSERNAME}
+	email = ${GITHTTPSCREDS}
+[core]
+	editor = vim
+	autocrlf = input # CAREFUL !!! This needs to be set to true when working with others
+[credential]
+	helper = store
