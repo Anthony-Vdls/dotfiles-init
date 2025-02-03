@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
   fi
 fi
 echo "##########"
-echo "# .bashrc sourced" 
+echo "# .bashrc " 
 echo "##########"
 echo " " 
 
