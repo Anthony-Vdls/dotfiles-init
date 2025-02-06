@@ -18,3 +18,17 @@ myip4() {
     echo "Public IP Address: $publicip"
     echo "Subnet Mask      : $netmask"
 }
+
+# this makes pushing fater
+push() {
+	if [ -z "$1" ]; then
+		echo "Please provide a commit message."
+		return 1
+	fi
+	
+	commit_message="$*"
+
+	git add . &&
+	git commit -m "$commit_message" &&
+	git push
+}

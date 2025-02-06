@@ -144,6 +144,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <silent><expr> <A-j> pumvisible() ? "\<C-n>" : "\<A-j>"
 inoremap <silent><expr> <A-k> pumvisible() ? "\<C-p>" : "\<A-k>"
 
+" Use this line to fource python to use flake8 for python linting
+let g:ale_linters = {'python': ['flake8']}
+
 " }}}
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
