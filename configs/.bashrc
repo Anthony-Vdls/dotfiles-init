@@ -70,8 +70,20 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# PS1 var
+PROMPT_COMMAND='
+    max_len=64  # Adjust to control how much of the path is shown
+    dir=$(pwd)
+    if [[ ${#dir} -gt $max_len ]]; then
+        dir="…${dir: -$max_len}"
+    fi
+    PS1="${debian_chroot:+($debian_chroot)}${VIRTUAL_ENV:+($(basename "$VIRTUAL_ENV")) }\
+\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]$dir\n🐢\[\033[00m\] "
+'
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n \$\[\033[00m\] '
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\n🐢\[\033[00m\] '
+	# PS1='\[\e[1;32m\]\u@\h\[\e[0m\]:\[\e[1;34m\]\w\n $(random_emoji) \[\e[0m\]'
+	PS1='${PROMPT_COMMAND}'
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi

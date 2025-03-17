@@ -92,7 +92,27 @@ set fileformat=unix " Ensures handling of unix files
 " Mapping for freqently typed stuff
 imap ;pr System.out.println();<left><left>
 imap ;main public static void main(String args[]) 
-imap ;if if(...){...} 
+inoremap ;deg °
+inoremap ;pm ±
+inoremap ;inf ∞
+inoremap ;pi π
+inoremap ;ohm Ω
+inoremap ;sigma σ
+inoremap ;not ¬
+inoremap ;sum ∑
+	" join operations
+inoremap ;natj ⨝ 
+inoremap ;lsj ⋉
+inoremap ;rsj ⋊ 
+inoremap ;laj ▷
+inoremap ;raj ◁ 
+inoremap ;loj ⟕
+inoremap ;roj ⟖
+inoremap ;foj ⟗ 
+	" set operations
+inoremap ;union ∪
+inoremap ;intersec ∩
+
 
 " Should enable mouse pop ups
 set mouse=a

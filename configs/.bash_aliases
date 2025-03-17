@@ -19,4 +19,8 @@ alias update='sudo apt-get update && sudo apt upgrade && sudo snap refresh && su
 alias opn='open . && exit'
 alias treed='tree -d -L 2'
 alias treea='tree -a -L 2'
-
+alias q='exit'
+alias dbs='sudo -u postgres psql'
+alias act9r='docker exec -it postgres psql -U postgres'
+alias mcs='java -Xmx8g -Xms4g -jar server.jar'
+alias mcsm='java -Xmx16G -Xms8G -jar server.jar'
